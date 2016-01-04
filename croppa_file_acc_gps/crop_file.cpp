@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 #include <sstream>
-#include <windows.h>
+#include <boost/filesystem.hpp>
 
 using namespace std;
 
@@ -25,7 +25,14 @@ vector<string> NomiFiles(bool togli_ext = true, string dir = "") {
 }
 
 void MakeFolder(const char * path) {
-	if(!CreateDirectory(path, NULL)) return;
+  if (!boost::filesystem::exists(path)) {
+    boost::filesystem::create_directories(path);
+  }
+  else {
+    std::string old = std::string(path) + "_old";
+    boost::filesystem::rename(old, path);
+    boost::filesystem::create_directories(path);
+  }
 };
 
 int main(int nargs, char** args) {
