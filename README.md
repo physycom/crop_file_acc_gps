@@ -1,4 +1,35 @@
-# crop_file_acc_gps
+---
+documentclass: physycomen
+title:  "crop_file_acc_gps"
+author: "Guidetti, Di Cristina, Sinigardi"
+---
+
+<a href="http://www.physycom.unibo.it"> 
+<div class="image">
+<img src="https://cdn.rawgit.com/physycom/templates/697b327d/logo_unibo.png" width="90" height="90" alt="© Physics of Complex Systems Laboratory - Physics and Astronomy Department - University of Bologna"> 
+</div>
+</a>
+<a href="https://travis-ci.org/physycom/crop_file_acc_gps"> 
+<div class="image">
+<img src="https://travis-ci.org/physycom/crop_file_acc_gps.svg?branch=master" width="90" height="20" alt="Build Status"> 
+</div>
+</a>
+<a href="https://ci.appveyor.com/project/cenit/crop-file-acc-gps"> 
+<div class="image">
+<img src="https://ci.appveyor.com/api/projects/status/3fc4fxuf2jitbovr?svg=true" width="90" height="20" alt="Build Status"> 
+</div>
+</a>
+
+
+### Installation
+**CMake**, a **C++11** compatible compiler and **boost** libraries are required. To build the executable, clone the repo and then type  
+```
+mkdir build ; cd build ; cmake .. ; cmake --build . --target install
+```
+With CMake you can also deploy projects for the most common IDEs.  
+
+
+### Description
 Simply parses all files in a folder, making a copy containing a selected time window.
 Files should follow the structure:
 
@@ -8,7 +39,7 @@ A subfolder "crop" will be created, and files with only the selected time window
 
 Only works via command line arguments.
 
-`croppa_file_acc_gps.exe folder_name`
+`./crop_file_acc_gps folder_name`
 
 Example file:
 ```
